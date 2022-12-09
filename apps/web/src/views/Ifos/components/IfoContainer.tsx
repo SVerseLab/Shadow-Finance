@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import styled from 'styled-components'
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Container, LinkExternal } from '@pancakeswap/uikit'
+// import { useTranslation } from '@pancakeswap/localization'
+import { Box, Container } from '@pancakeswap/uikit'
 import IfoLayout, { IfoLayoutWrapper } from './IfoLayout'
 import IfoPoolVaultCard from './IfoPoolVaultCard'
 import IfoQuestions from './IfoQuestions'
@@ -16,7 +16,7 @@ interface TypeProps {
 }
 
 const IfoContainer: React.FC<React.PropsWithChildren<TypeProps>> = ({ ifoSection, ifoSteps }) => {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   return (
     <IfoLayout id="current-ifo" py={['24px', '24px', '40px']}>
@@ -31,13 +31,13 @@ const IfoContainer: React.FC<React.PropsWithChildren<TypeProps>> = ({ ifoSection
       </IfoStepBackground>
       <Container>
         <IfoQuestions />
-        <LinkExternal
+        {/* <LinkExternal
           href="https://docs.pancakeswap.finance/contact-us/business-partnerships#ifos-token-sales"
           mx="auto"
           mt="16px"
         >
           {t('Apply to run an IFO!')}
-        </LinkExternal>
+        </LinkExternal> */}
       </Container>
     </IfoLayout>
   )

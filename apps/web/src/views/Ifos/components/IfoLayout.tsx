@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const IfoLayout = styled(Box)`
   > div:not(.sticky-header) {
     margin-bottom: 32px;
+    position: static;
   }
 `
 export const IfoLayoutWrapper = styled(IfoLayout)`
@@ -13,7 +14,7 @@ export const IfoLayoutWrapper = styled(IfoLayout)`
   align-items: flex-start;
 
   ${({ theme }) => theme.mediaQueries.xl} {
-    grid-template-columns: minmax(300px, 1fr) minmax(462px, 2fr);
+    grid-template-columns: minmax(662px, 2fr);
   }
 
   > div {

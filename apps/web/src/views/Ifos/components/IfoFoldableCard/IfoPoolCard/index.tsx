@@ -14,7 +14,7 @@ import {
 import { useAccount } from 'wagmi'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { useMemo, useState } from 'react'
-import { useProfile } from 'state/profile/hooks'
+// import { useProfile } from 'state/profile/hooks'
 import styled from 'styled-components'
 import useCriterias from 'views/Ifos/hooks/v3/useCriterias'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
@@ -51,8 +51,8 @@ export const cardConfig = (
   poolId: PoolIds,
   meta: {
     version: number
-    needQualifiedPoints?: boolean
-    needQualifiedNFT?: boolean
+    // needQualifiedPoints?: boolean
+    // needQualifiedNFT?: boolean
   },
 ): CardConfigReturn => {
   switch (poolId) {
@@ -118,7 +118,7 @@ const SmallCard: React.FC<React.PropsWithChildren<IfoCardProps>> = ({
   const { t } = useTranslation()
   const { address: account } = useAccount()
 
-  const { admissionProfile, pointThreshold, vestingInformation } = publicIfoData[poolId]
+  const { admissionProfile, pointThreshold, } = publicIfoData[poolId]
 
   const { needQualifiedNFT, needQualifiedPoints } = useMemo(() => {
     return ifo.version >= 3.1 && poolId === PoolIds.poolBasic
@@ -131,14 +131,14 @@ const SmallCard: React.FC<React.PropsWithChildren<IfoCardProps>> = ({
 
   const config = cardConfig(t, poolId, {
     version: ifo.version,
-    needQualifiedNFT,
-    needQualifiedPoints,
+    // needQualifiedNFT,
+    // needQualifiedPoints,
   })
 
-  const { hasActiveProfile, isLoading: isProfileLoading } = useProfile()
+  // const { hasActiveProfile, isLoading: isProfileLoading } = useProfile()
   const { targetRef, tooltip, tooltipVisible } = useTooltip(config.tooltip, { placement: 'bottom' })
 
-  const isLoading = isProfileLoading || publicIfoData.status === 'idle'
+  const isLoading = publicIfoData.status === 'idle'
 
   const { isEligible, criterias } = useCriterias(walletIfoData[poolId], {
     needQualifiedNFT,
@@ -149,11 +149,11 @@ const SmallCard: React.FC<React.PropsWithChildren<IfoCardProps>> = ({
     return (
       account &&
       ifo.version >= 3.2 &&
-      vestingInformation.percentage > 0 &&
+      // vestingInformation.percentage > 0 &&
       publicIfoData.status === 'finished' &&
       walletIfoData[poolId].amountTokenCommittedInLP.gt(0)
     )
-  }, [account, ifo, poolId, publicIfoData, vestingInformation, walletIfoData])
+  }, [account, ifo, poolId, publicIfoData, walletIfoData])
 
   const cardTitle = ifo.cIFO ? `${config.title} (cIFO)` : config.title
 
@@ -201,7 +201,7 @@ const SmallCard: React.FC<React.PropsWithChildren<IfoCardProps>> = ({
                 ifo={ifo}
                 publicIfoData={publicIfoData}
                 walletIfoData={walletIfoData}
-                hasProfile={hasActiveProfile}
+                // hasProfile={hasActiveProfile}
                 isLoading={isLoading}
                 onApprove={onApprove}
                 enableStatus={enableStatus}
@@ -213,7 +213,7 @@ const SmallCard: React.FC<React.PropsWithChildren<IfoCardProps>> = ({
                   ifo={ifo}
                   publicIfoData={publicIfoData}
                   walletIfoData={walletIfoData}
-                  hasProfile={hasActiveProfile}
+                  // hasProfile={hasActiveProfile}
                   isLoading={isLoading}
                   enableStatus={enableStatus}
                 />

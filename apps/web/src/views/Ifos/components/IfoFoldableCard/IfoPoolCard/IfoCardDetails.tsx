@@ -8,7 +8,7 @@ import { Ifo, PoolIds } from 'config/constants/types'
 import BigNumber from 'bignumber.js'
 import { getBalanceNumber, formatNumber } from '@pancakeswap/utils/formatBalance'
 import useBUSDPrice from 'hooks/useBUSDPrice'
-import { DAY_IN_SECONDS } from 'utils/getTimePeriods'
+// import { DAY_IN_SECONDS } from 'utils/getTimePeriods'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { SkeletonCardDetails } from './Skeletons'
 
@@ -188,8 +188,8 @@ const IfoCardDetails: React.FC<React.PropsWithChildren<IfoCardDetailsProps>> = (
 
   const tokenEntry = <MaxTokenEntry poolId={poolId} ifo={ifo} maxToken={maxToken} />
 
-  const durationInSeconds = ifo.version >= 3.2 ? poolCharacteristic.vestingInformation.duration : 0
-  const vestingDays = Math.ceil(durationInSeconds / DAY_IN_SECONDS)
+  // const durationInSeconds = ifo.version >= 3.2 ? poolCharacteristic : 0
+  // // const vestingDays = Math.ceil(durationInSeconds / DAY_IN_SECONDS)
 
   /* Format end */
   const renderBasedOnIfoStatus = () => {
@@ -241,13 +241,13 @@ const IfoCardDetails: React.FC<React.PropsWithChildren<IfoCardDetailsProps>> = (
                   },
                 )}
               />
-              <FooterEntry
+              {/* <FooterEntry
                 label={t('Vesting schedule:')}
                 value={`${vestingDays} days`}
                 tooltipContent={t('The vested tokens will be released linearly over a period of %days% days.', {
                   days: vestingDays,
                 })}
-              />
+              /> */}
             </>
           )}
         </>

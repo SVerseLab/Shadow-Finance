@@ -19,7 +19,6 @@ import {
   StepStatus,
   Stepper,
   Text,
-  TooltipText,
   useTooltip,
 } from '@pancakeswap/uikit'
 import { useAccount } from 'wagmi'
@@ -30,8 +29,7 @@ import { useProfile } from 'state/profile/hooks'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
 import { useBUSDCakeAmount } from 'hooks/useBUSDPrice'
-import { useIfoCredit, useIfoCeiling } from 'state/pools/hooks'
-import { getICakeWeekDisplay } from 'views/Pools/helpers'
+import { useIfoCredit } from 'state/pools/hooks'
 
 interface TypeProps {
   ifoCurrencyAddress: string
@@ -62,23 +60,14 @@ const InlineLink = styled(Link)`
   display: inline;
 `
 
-const Step1 = ({ hasProfile }: { hasProfile: boolean }) => {
+const Step2 = ({ hasProfile }: { hasProfile: boolean }) => {
   const { t } = useTranslation()
   const credit = useIfoCredit()
-  const ceiling = useIfoCeiling()
   const creditDollarValue = useBUSDCakeAmount(getBalanceNumber(credit))
-  const weeksDisplay = getICakeWeekDisplay(ceiling)
 
-  const { targetRef, tooltip, tooltipVisible } = useTooltip(
+  const {tooltip, tooltipVisible } = useTooltip(
     <Box>
-      <Text>
-        {t(
-          'The number of iCAKE equals the locked staking amount if the staking duration is longer than %weeks% weeks. If the staking duration is less than %weeks% weeks, it will linearly decrease based on the staking duration.',
-          {
-            weeks: weeksDisplay,
-          },
-        )}
-      </Text>
+     
       <InlineLink external href="https://docs.pancakeswap.finance/products/ifo-initial-farm-offering/icake">
         {t('Learn more about iCAKE')}
       </InlineLink>
@@ -90,20 +79,12 @@ const Step1 = ({ hasProfile }: { hasProfile: boolean }) => {
     <CardBody>
       {tooltipVisible && tooltip}
       <Heading as="h4" color="secondary" mb="16px">
-        {t('Lock CAKE in the CAKE pool')}
+        {t('Enjoy and Welcome to The Shadow Verse')}
       </Heading>
       <Box>
         <Text mb="4px" color="textSubtle" small>
           {t(
-            'The maximum amount of CAKE you can commit to the Public Sale equals the number of your iCAKE. Lock more CAKE for longer durations to increase the maximum CAKE you can commit to the sale.',
-          )}
-        </Text>
-        <TooltipText as="span" fontWeight={700} ref={targetRef} color="textSubtle" small>
-          {t('How does the number of iCAKE calculated?')}
-        </TooltipText>
-        <Text mt="4px" color="textSubtle" small>
-          {t(
-            'Missed this IFO? You will enjoy the same amount of iCAKE for future IFOs if your locked-staking position is not unlocked.',
+            'Thank you for taking part in the Shadow Token offering, Farm & Pool will be opened to be able to utilize your Shadow as more products will be rolled out.',
           )}
         </Text>
       </Box>
@@ -140,16 +121,16 @@ const Step1 = ({ hasProfile }: { hasProfile: boolean }) => {
   )
 }
 
-const Step2 = ({ hasProfile, isLive, isCommitted }: { hasProfile: boolean; isLive: boolean; isCommitted: boolean }) => {
+const Step1 = ({ hasProfile, isLive, isCommitted }: { hasProfile: boolean; isLive: boolean; isCommitted: boolean }) => {
   const { t } = useTranslation()
   return (
     <CardBody>
       <Heading as="h4" color="secondary" mb="16px">
-        {t('Commit CAKE')}
+        {t('Commit WCORE')}
       </Heading>
       <Text color="textSubtle" small>
         {t(
-          'Please note that CAKE in the fixed-term staking positions will remain locked and can not be used for committing to IFO sales. You will need a separate amount of CAKE in your wallet balance to commit to the IFO sales.',
+          'Commit WCORE to participate in shadow token sale, incase of overflow left over wcore will be returned back to users wallet',
         )}{' '}
         <br />
       </Text>
@@ -202,8 +183,8 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
       }
 
       return (
-        <Button as={RouterLink} to={`/profile/${account.toLowerCase()}`}>
-          {t('Activate your Profile')}
+        <Button as={RouterLink} to={`/swap/${account.toLowerCase()}`}>
+          {t('Convert CORE to WCORE')}
         </Button>
       )
     }
@@ -213,27 +194,27 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
         return (
           <CardBody>
             <Heading as="h4" color="secondary" mb="16px">
-              {t('Activate your Profile')}
+              {t('Convert CORE to WCORE')}
             </Heading>
             <Text color="textSubtle" small mb="16px">
-              {t('You’ll need an active PancakeSwap Profile to take part in an IFO!')}
+              {t('You’ll need WCORE to take part in Shadow token IFO!, Swap CORE to WCORE on the swap page.')}
             </Text>
             {renderAccountStatus()}
           </CardBody>
         )
-      case 1:
-        return <Step1 hasProfile={hasActiveProfile} />
-      case 2:
-        return <Step2 hasProfile={hasActiveProfile} isLive={isLive} isCommitted={isCommitted} />
       case 3:
+        return <Step2 hasProfile={hasActiveProfile} />
+      case 1:
+        return <Step1 hasProfile={hasActiveProfile} isLive={isLive} isCommitted={isCommitted} />
+      case 2:
         return (
           <CardBody>
             <Heading as="h4" color="secondary" mb="16px">
-              {t('Claim your tokens and achievement')}
+              {t('Claim your tokens')}
             </Heading>
             <Text color="textSubtle" small>
               {t(
-                'After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent CAKE tokens will be returned to your wallet.',
+                'After the Token sales is over, you can claim any tokens bought, and any unspent WCORE tokens will be returned to your wallet.',
               )}
             </Text>
           </CardBody>
@@ -246,7 +227,7 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
   return (
     <Wrapper>
       <Heading id="ifo-how-to" as="h2" scale="xl" color="secondary" mb="24px" textAlign="center">
-        {t('How to Take Part in the Public Sale')}
+        {t('How to Take Part in the Shadow Token Sale')}
       </Heading>
       <Stepper>
         {stepsValidationStatus.map((_, index) => (

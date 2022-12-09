@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { BigNumber as EthersBigNumber } from '@ethersproject/bignumber'
+// import { BigNumber as EthersBigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 
 import { IfoStatus, PoolIds } from 'config/constants/types'
@@ -32,10 +32,10 @@ export interface PublicIfoData {
   startBlockNum: number
   endBlockNum: number
   currencyPriceInUSD: BigNumber
-  numberPoints: number
-  thresholdPoints: EthersBigNumber
-  plannedStartTime?: number
-  vestingStartTime?: number
+  // numberPoints: number
+  // thresholdPoints: EthersBigNumber
+  // plannedStartTime?: number
+  // vestingStartTime?: number
 
   fetchIfoData: (currentBlock: number) => Promise<void>
   [PoolIds.poolBasic]?: PoolCharacteristics
