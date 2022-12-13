@@ -12,11 +12,11 @@ const ifos: Ifo[] = [
     isActive: true,
     name: 'MGP',
     plannedStartTime: 1666872000,
-    poolBasic: {
+    poolUnlimited: {
       raiseAmount: '$437,500',
       distributionRatio: 0.25,
     },
-    poolUnlimited: {
+    poolBasic: {
       raiseAmount: '$1,312,500',
       distributionRatio: 0.75,
     },

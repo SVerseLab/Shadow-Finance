@@ -11,6 +11,8 @@ import perpetualImage from './perpetual.png'
 import perpetualMobileImage from './perpetualMobile.png'
 import Aptos from './Aptos.png'
 import AptosXPancakeSwap from './AptosXPancakeSwap.png'
+import listingImage from './listing.png'
+import listingMobileImage from './listingMobile.png'
 
 export {
   lotteryImage,
@@ -26,4 +28,6 @@ export {
   perpetualMobileImage,
   Aptos,
   AptosXPancakeSwap,
+  listingImage,
+  listingMobileImage,
 }

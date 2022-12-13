@@ -43,7 +43,7 @@ const PerpetualBanner = () => {
   const { isDark } = useTheme()
 
   const perpetualUrl = useMemo(
-    () => `https://perp.pancakeswap.finance/${perpLangMap(code)}/futures/BTCUSDT?theme=${perpTheme(isDark)}`,
+    () => `https://docs.shadowswap.xyz/${perpLangMap(code)}/the-team/sverse-lab?theme=${perpTheme(isDark)}`,
     [code, isDark],
   )
   const headerRef = useRef<HTMLDivElement>(null)
@@ -63,12 +63,12 @@ const PerpetualBanner = () => {
     <S.Wrapper>
       <S.Inner>
         <S.LeftWrapper>
-          <S.StyledSubheading ref={headerRef}>{t('Perpetual Futures')}</S.StyledSubheading>
-          <Header width={['160px', '160px', 'auto']}>{t('Up to 100× Leverage')}</Header>
+          <S.StyledSubheading ref={headerRef}>{t('SVerse Lab')}</S.StyledSubheading>
+          <Header width={['160px', '160px', 'auto']}>{t('ShadowSwap Powered by SVerse Lab')}</Header>
           <Link href={perpetualUrl} external>
             <Button>
               <Text color="invertedContrast" bold fontSize="16px" mr="4px">
-                {t('Trade Now')}
+                {t('Learn More Now')}
               </Text>
               <ArrowForwardIcon color="invertedContrast" />
             </Button>

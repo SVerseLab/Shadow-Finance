@@ -10,10 +10,10 @@ const Container = styled(Flex)`
   padding: 12px;
   align-items: center;
   background: linear-gradient(0deg, rgba(39, 38, 44, 0.4), rgba(39, 38, 44, 0.4)),
-    linear-gradient(180deg, #8051d6 0%, #492286 100%);
+    linear-gradient(180deg, #5c258d 0%, #4389a2 100%);
   ${({ theme }) => theme.mediaQueries.md} {
     padding: 0px;
-    background: linear-gradient(180deg, #8051d6 0%, #492286 100%);
+    background: linear-gradient(180deg, #5c258d 0%, #4389a2 100%);
   }
 `
 
@@ -40,15 +40,13 @@ const SpeechBubble = styled.div`
   }
 `
 
-const domain = 'https://pancakeswap.finance'
-
 const PhishingWarningBanner: React.FC<React.PropsWithChildren> = () => {
   const { t } = useTranslation()
   const [, hideBanner] = usePhishingBannerManager()
   const { isMobile, isMd } = useMatchBreakpoints()
   const warningTextAsParts = useMemo(() => {
-    const warningText = t("please make sure you're visiting %domain% - check the URL carefully.", { domain })
-    return warningText.split(/(https:\/\/pancakeswap.finance)/g)
+    const warningText = t("please make sure you're visiting https://shadowswap.xyz - check the URL carefully.")
+    return warningText.split(/(https:\/\/shadowswap.xyz)/g)
   }, [t])
   const warningTextComponent = (
     <>
@@ -61,8 +59,8 @@ const PhishingWarningBanner: React.FC<React.PropsWithChildren> = () => {
           key={i}
           small
           as="span"
-          bold={text === domain}
-          color={text === domain ? '#FFFFFF' : '#BDC2C4'}
+          bold={text === 'https://shadowswap.xyz'}
+          color={text === 'https://shadowswap.xyz' ? '#FFFFFF' : '#BDC2C4'}
         >
           {text}
         </Text>
@@ -82,11 +80,11 @@ const PhishingWarningBanner: React.FC<React.PropsWithChildren> = () => {
         <>
           <InnerContainer>
             <img
-              src="/images/decorations/phishing-warning-bunny.webp"
+              src="/images/decorations/phishing-warning-shadow.webp"
               alt="phishing-warning"
               width="92px"
               onError={(e) => {
-                const fallbackSrc = '/images/decorations/phishing-warning-bunny.png'
+                const fallbackSrc = '/images/decorations/phishing-warning-shadow.png'
                 if (!e.currentTarget.src.endsWith(fallbackSrc)) {
                   // eslint-disable-next-line no-param-reassign
                   e.currentTarget.src = fallbackSrc
