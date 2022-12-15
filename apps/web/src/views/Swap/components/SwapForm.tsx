@@ -4,10 +4,10 @@ import { ArrowDownIcon, Box, Button, Message, MessageText, Skeleton, Swap as Swa
 import UnsupportedCurrencyFooter from 'components/UnsupportedCurrencyFooter'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { useCallback,useEffect, useMemo, useState } from 'react'
 import { useSwapActionHandlers } from 'state/swap/useSwapActionHandlers'
 import { maxAmountSpend } from 'utils/maxAmountSpend'
-import AccessRisk from 'views/Swap/components/AccessRisk'
+// import AccessRisk from 'views/Swap/components/AccessRisk'
 
 import CurrencyInputPanel from 'components/CurrencyInputPanel'
 import { AutoColumn } from 'components/Layout/Column'
@@ -32,7 +32,7 @@ import { isAddress } from '../../../utils'
 import useRefreshBlockNumberID from '../hooks/useRefreshBlockNumber'
 import useWarningImport from '../hooks/useWarningImport'
 import { useStableFarms } from '../StableSwap/hooks/useStableConfig'
-import { SwapFeaturesContext } from '../SwapFeaturesContext'
+// import { SwapFeaturesContext } from '../SwapFeaturesContext'
 import AddressInputPanel from './AddressInputPanel'
 import AdvancedSwapDetailsDropdown from './AdvancedSwapDetailsDropdown'
 import CurrencyInputHeader from './CurrencyInputHeader'
@@ -40,7 +40,6 @@ import { ArrowWrapper, Wrapper } from './styleds'
 import SwapCommitButton from './SwapCommitButton'
 
 export default function SwapForm() {
-  const { isAccessTokenSupported } = useContext(SwapFeaturesContext)
   const { t } = useTranslation()
   const { refreshBlockNumber, isLoading } = useRefreshBlockNumberID()
   const stableFarms = useStableFarms()
@@ -265,11 +264,11 @@ export default function SwapForm() {
             commonBasesType={CommonBasesType.SWAP_LIMITORDER}
           />
 
-          {isAccessTokenSupported && (
+          {/* {isAccessTokenSupported && (
             <Box>
               <AccessRisk inputCurrency={currencies[Field.INPUT]} outputCurrency={currencies[Field.OUTPUT]} />
             </Box>
-          )}
+          )} */}
 
           {isExpertMode && recipient !== null && !showWrap ? (
             <>
