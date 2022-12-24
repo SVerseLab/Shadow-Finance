@@ -11,27 +11,12 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
         isHighlighted: true,
       },
       {
-        label: t('Brand'),
-        href: 'https://docs.pancakeswap.finance/brand',
-      },
-      {
         label: t('Blog'),
-        href: 'https://medium.com/pancakeswap',
+        href: 'https://medium.com/@shadowswap',
       },
       {
-        label: t('Community'),
-        href: 'https://docs.pancakeswap.finance/contact-us/telegram',
-      },
-      {
-        label: t('Litepaper'),
-        href: 'https://v2litepaper.pancakeswap.finance/',
-      },
-      {
-        label: '—',
-      },
-      {
-        label: t('Online Store'),
-        href: 'https://pancakeswap.creator-spring.com/',
+        label: t('CoreDao'),
+        href: 'https://coredao.org/',
       },
     ],
   },
@@ -39,16 +24,12 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
     label: t('Help'),
     items: [
       {
-        label: t('Customer Support'),
-        href: 'https://docs.pancakeswap.finance/contact-us/customer-support',
-      },
-      {
-        label: t('Troubleshooting'),
-        href: 'https://docs.pancakeswap.finance/help/troubleshooting',
-      },
-      {
         label: t('Guides'),
-        href: 'https://docs.pancakeswap.finance/get-started',
+        href: 'https://shadow-11.gitbook.io/shadowswap/',
+      },
+      {
+        label: t('Getting Started with Core'),
+        href: 'https://docs.coredao.org/developer',
       },
     ],
   },
@@ -57,23 +38,19 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/pancakeswap',
+        href: 'https://github.com/shadowswap',
       },
       {
         label: t('Documentation'),
-        href: 'https://docs.pancakeswap.finance',
+        href: 'https://shadow-11.gitbook.io/shadowswap/',
       },
       {
-        label: t('Bug Bounty'),
-        href: 'https://docs.pancakeswap.finance/code/bug-bounty',
+        label: t('Core Network Docs'),
+        href: 'https://docs.coredao.org/core-white-paper-v1.0.5/',
       },
       {
-        label: t('Audits'),
-        href: 'https://docs.pancakeswap.finance/help/faq#is-pancakeswap-safe-has-pancakeswap-been-audited',
-      },
-      {
-        label: t('Careers'),
-        href: 'https://docs.pancakeswap.finance/hiring/become-a-chef',
+        label: t('Sverse Lab'),
+        href: 'https://docs.shadowswap.xyz/hiring/join-the-shadow-devs',
       },
     ],
   },

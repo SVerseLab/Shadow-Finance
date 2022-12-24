@@ -56,12 +56,20 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       <PageMeta />
       <style jsx global>{`
         #home-1 .page-bg {
-          background: url('https://raw.githubusercontent.com/SVerseLab/images/master/Whitethin.png');
+          background: url('https://raw.githubusercontent.com/SVerseLab/images/master/longbox.png');
           background-size: cover;
+          background-position: center;
+          background-width: 100%;
+          background-height: 100vh;
         }
         [data-theme='dark'] #home-1 .page-bg {
-          background: url('https://raw.githubusercontent.com/SVerseLab/images/master/BG_EDITTED.png');
+          background: url('https://raw.githubusercontent.com/SVerseLab/images/master/longbox.png');
           background-size: cover;
+          background-position: center;
+          background-width: 100%;
+          background-height: 100vh;
+
+       
         }
         #home-2 .page-bg {
           background: linear-gradient(180deg, #ffffff 22%, #d7caec 100%);
@@ -70,10 +78,18 @@ const Home: React.FC<React.PropsWithChildren> = () => {
           background: linear-gradient(180deg, #09070c 22%, #201335 100%);
         }
         #home-3 .page-bg {
-          background: linear-gradient(180deg, #6fb6f1 0%, #eaf2f6 100%);
+          background: url('https://raw.githubusercontent.com/SVerseLab/images/master/Box.jpg');
+          background-size: cover;
+          background-position: center;
+          background-width: 100%;
+          background-height: 100vh;
         }
         [data-theme='dark'] #home-3 .page-bg {
-          background: linear-gradient(180deg, #0b4576 0%, #091115 100%);
+          background: url('https://raw.githubusercontent.com/SVerseLab/images/master/Box.jpg');
+          background-size: cover;
+          background-position: center;
+          background-width: 100%;
+          background-height: 100vh;
         }
         #home-4 .inner-wedge svg {
           fill: #d8cbed;

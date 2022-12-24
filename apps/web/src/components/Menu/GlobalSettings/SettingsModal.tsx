@@ -13,11 +13,9 @@ import {
 } from '@pancakeswap/uikit'
 import {
   useExpertModeManager,
-  useSubgraphHealthIndicatorManager,
   useUserExpertModeAcknowledgementShow,
   useUserSingleHopOnly,
   useZapModeManager,
-  useUserUsernameVisibility,
 } from 'state/user/hooks'
 import { useUserSmartRouter } from 'state/user/smartRouter'
 import { ChainId } from '@pancakeswap/sdk'
@@ -70,8 +68,6 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
   const [expertMode, toggleExpertMode] = useExpertModeManager()
   const [singleHopOnly, setSingleHopOnly] = useUserSingleHopOnly()
   const [zapMode, toggleZapMode] = useZapModeManager()
-  const [subgraphHealth, setSubgraphHealth] = useSubgraphHealthIndicatorManager()
-  const [userUsernameVisibility, setUserUsernameVisibility] = useUserUsernameVisibility()
   const { onChangeRecipient } = useSwapActionHandlers()
   const { chainId } = useActiveChainId()
   const [smartRouterOpen, setSmartRouterOpen] = useUserSmartRouter()
@@ -113,44 +109,6 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
               <Flex justifyContent="space-between" mb="24px">
                 <Text>{t('Dark mode')}</Text>
                 <ThemeSwitcher isDark={isDark} toggleTheme={() => setTheme(isDark ? 'light' : 'dark')} />
-              </Flex>
-              <Flex justifyContent="space-between" alignItems="center" mb="24px">
-                <Flex alignItems="center">
-                  <Text>{t('Subgraph Health Indicator')}</Text>
-                  <QuestionHelper
-                    text={t(
-                      'Turn on subgraph health indicator all the time. Default is to show the indicator only when the network is delayed',
-                    )}
-                    placement="top-start"
-                    ml="4px"
-                  />
-                </Flex>
-                <Toggle
-                  id="toggle-subgraph-health-button"
-                  checked={subgraphHealth}
-                  scale="md"
-                  onChange={() => {
-                    setSubgraphHealth(!subgraphHealth)
-                  }}
-                />
-              </Flex>
-              <Flex justifyContent="space-between" alignItems="center" mb="24px">
-                <Flex alignItems="center">
-                  <Text>{t('Show username')}</Text>
-                  <QuestionHelper
-                    text={t('Shows username of wallet instead of bunnies')}
-                    placement="top-start"
-                    ml="4px"
-                  />
-                </Flex>
-                <Toggle
-                  id="toggle-username-visibility"
-                  checked={userUsernameVisibility}
-                  scale="md"
-                  onChange={() => {
-                    setUserUsernameVisibility(!userUsernameVisibility)
-                  }}
-                />
               </Flex>
               {chainId === ChainId.BSC && <GasSettings />}
             </Flex>

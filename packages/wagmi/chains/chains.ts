@@ -67,11 +67,11 @@ export const fantomTestnet: Chain = {
   testnet: true,
 }
 
-const bscExplorer = { name: 'BscScan', url: 'https://bscscan.com' }
+const bscExplorer = { name: 'CoreScan', url: 'https://bscscan.com' }
 
 export const bsc: Chain = {
   id: 56,
-  name: 'BNB Smart Chain',
+  name: 'CORE Chain',
   network: 'bsc',
   rpcUrls: {
     public: 'https://bsc-dataseed1.binance.org',
