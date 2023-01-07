@@ -23,7 +23,7 @@ export interface PoolCharacteristics {
 
 // IFO data unrelated to the user returned by useGetPublicIfoData
 export interface PublicIfoData {
-  vestingStartTime: number
+  // vestingStartTime: number
   isInitialized: boolean
   status: IfoStatus
   blocksRemaining: number

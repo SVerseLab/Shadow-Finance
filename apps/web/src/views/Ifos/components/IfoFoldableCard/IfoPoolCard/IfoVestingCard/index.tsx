@@ -9,8 +9,6 @@ import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import ProgressStepper from './ProgressStepper'
 import TotalPurchased from './TotalPurchased'
 import TotalAvailableClaim from './TotalAvailableClaim'
-import ReleasedTokenInfo from './ReleasedTokenInfo'
-import IfoVestingFooter from './IfoVestingFooter'
 import ClaimButton from '../ClaimButton'
 import VestingClaimButton from '../VestingClaimButton'
 
@@ -29,15 +27,12 @@ const IfoVestingCard: React.FC<React.PropsWithChildren<IfoVestingCardProps>> = (
 }) => {
   const { t } = useTranslation()
   const { token } = ifo
-  const { vestingStartTime } = publicIfoData
   const userPool = walletIfoData[poolId]
-  const { duration } = publicIfoData[poolId]?.vestingInformation
+  
 
-  const currentTimeStamp = new Date().getTime()
-  const timeVestingEnd = vestingStartTime === 0 ? currentTimeStamp : (vestingStartTime + duration) * 1000
-  const isVestingOver = currentTimeStamp > timeVestingEnd
+  
 
-  const { amountReleased, amountInVesting, amountAvailableToClaim, amountAlreadyClaimed } = useIfoVesting({
+  const { amountAvailableToClaim, amountAlreadyClaimed } = useIfoVesting({
     poolId,
     publicIfoData,
     walletIfoData,
@@ -53,12 +48,7 @@ const IfoVestingCard: React.FC<React.PropsWithChildren<IfoVestingCardProps>> = (
       <Box>
         <ProgressStepper poolId={poolId} publicIfoData={publicIfoData} />
         <TotalPurchased ifo={ifo} poolId={poolId} walletIfoData={walletIfoData} />
-        <ReleasedTokenInfo
-          ifo={ifo}
-          amountReleased={amountReleased}
-          amountInVesting={amountInVesting}
-          isVestingOver={isVestingOver}
-        />
+       
         <Divider />
         <TotalAvailableClaim ifo={ifo} amountAvailableToClaim={amountAvailableToClaim} />
         <Text mb="24px" color="textSubtle" fontSize="14px">
@@ -76,7 +66,6 @@ const IfoVestingCard: React.FC<React.PropsWithChildren<IfoVestingCardProps>> = (
           )}
         </Box>
       </Box>
-      <IfoVestingFooter ifo={ifo} poolId={poolId} publicIfoData={publicIfoData} walletIfoData={walletIfoData} />
     </Flex>
   )
 }
