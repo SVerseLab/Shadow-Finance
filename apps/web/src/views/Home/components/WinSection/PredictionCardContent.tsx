@@ -17,7 +17,7 @@ const PredictionCardContent = () => {
         </Text>
         <Text color="#280D5F" mb="40px">
           {t(
-            'ShadowPad will provide a series of pre-launch support, such as IDO(Initial Dex Offering), INO(Initial NFT Offering), Farm, Pool for Projects Launching on Core BlockChain.',
+            'ShadowPad will provide a series of pre-launch support, such as IFO(Initial Farm Offering), INO(Initial NFT Offering), Farm, Pool for Projects Launching on Core BlockChain.',
           )}
         </Text>
       </Flex>

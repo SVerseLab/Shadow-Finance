@@ -4,9 +4,9 @@ export const CAKE_MAINNET = new ERC20Token(
   ChainId.BSC,
   '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
   18,
-  'CAKE',
-  'PancakeSwap Token',
-  'https://pancakeswap.finance/',
+  'SHDW',
+  'ShadowSwap Token',
+  'https://shadowswap.xyz/',
 )
 
 export const CAKE_TESTNET = new ERC20Token(
@@ -23,7 +23,7 @@ export const USDC_BSC = new ERC20Token(
   '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
   18,
   'USDC',
-  'Binance-Peg USD Coin',
+  'Core-Peg USD Coin',
   'https://www.centre.io/usdc',
 )
 

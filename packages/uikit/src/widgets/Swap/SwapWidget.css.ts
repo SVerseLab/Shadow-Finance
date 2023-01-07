@@ -133,13 +133,14 @@ export const pageVariants = recipe({
       flexDirection: "column",
       alignItems: "center",
       width: "100%",
-      height: "100vh",
+      height: "100%",
       background: "backgroundImage",
       padding: "16px",
       paddingBottom: "0",
     }),
     style({
       backgroundSize: "cover",
+     
     }),
     responsiveStyle({
       sm: {

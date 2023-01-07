@@ -4,7 +4,7 @@ import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
   title: 'ShadowSwap',
-  description: 'The #1 AMM Dex on Core! Trade || Earn || IDO || NFT AMM || all on ShadowSwap on Core Chain.',
+  description: 'The #1 AMM Dex on Core! Trade || Earn || IFO || NFT AMM || all on ShadowSwap on Core Chain.',
   image: 'https://shadowswap.xyz/images/hero.png',
 }
 

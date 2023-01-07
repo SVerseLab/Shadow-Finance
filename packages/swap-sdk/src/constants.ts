@@ -70,9 +70,9 @@ export const WBNB = {
     ChainId.BSC,
     '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     18,
-    'WBNB',
-    'Wrapped BNB',
-    'https://www.binance.org'
+    'WCORE',
+    'Wrapped CORE',
+    'https://www.coredao.org'
   ),
   [ChainId.BSC_TESTNET]: new ERC20Token(
     ChainId.BSC_TESTNET,
@@ -104,12 +104,12 @@ export const NATIVE: Record<
   [ChainId.RINKEBY]: { name: 'Rinkeby Ether', symbol: 'RIN', decimals: 18 },
   [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
   [ChainId.BSC]: {
-    name: 'Binance Chain Native Token',
-    symbol: 'BNB',
+    name: 'Core Chain Native Token',
+    symbol: 'CORE',
     decimals: 18,
   },
   [ChainId.BSC_TESTNET]: {
-    name: 'Binance Chain Native Token',
+    name: 'Core Chain Native Token',
     symbol: 'tBNB',
     decimals: 18,
   },

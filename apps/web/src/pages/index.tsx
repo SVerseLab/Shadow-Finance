@@ -27,10 +27,10 @@ const IndexPage = ({ totalTx30Days, addressCount30Days, tvl }) => {
 }
 
 // Values fetched from TheGraph and BitQuery jan 24, 2022
-const txCount = 54780336
-const addressCount = 4425459
+const txCount = 0
+const addressCount = 0
 
-const tvl = 6082955532.115718
+const tvl = 0
 
 export const getStaticProps: GetStaticProps = async () => {
   const totalTxQuery = gql`

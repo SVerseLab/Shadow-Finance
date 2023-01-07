@@ -12,7 +12,7 @@ import { getCakeVaultAddress } from 'utils/addressHelpers'
 import useSWR from 'swr'
 import { SLOW_INTERVAL } from 'config/constants'
 import cakeVaultV2Abi from 'config/abi/cakeVaultV2.json'
-import { BigNumber } from '@ethersproject/bignumber'
+
 
 const StyledColumn = styled(Flex)<{ noMobileBorder?: boolean; noDesktopBorder?: boolean }>`
   flex-direction: column;
@@ -64,15 +64,7 @@ const Grid = styled.div`
 
 const emissionsPerBlock = 11.16
 
-/**
- * User (Planet Finance) built a contract on top of our original manual CAKE pool,
- * but the contract was written in such a way that when we performed the migration from Masterchef v1 to v2, the tokens were stuck.
- * These stuck tokens are forever gone (see their medium post) and can be considered out of circulation."
- * https://planetfinanceio.medium.com/pancakeswap-works-with-planet-to-help-cake-holders-f0d253b435af
- * https://twitter.com/PancakeSwap/status/1523913527626702849
- * https://bscscan.com/tx/0xd5ffea4d9925d2f79249a4ce05efd4459ed179152ea5072a2df73cd4b9e88ba7
- */
-const planetFinanceBurnedTokensWei = BigNumber.from('637407922445268000000000')
+
 const cakeVaultAddress = getCakeVaultAddress()
 
 const CakeDataRow = () => {
@@ -105,7 +97,7 @@ const CakeDataRow = () => {
         calls: [totalSupplyCall, burnedTokenCall, cakeVaultCall],
         allowFailure: true,
       })
-      const totalBurned = planetFinanceBurnedTokensWei.add(burned)
+      const totalBurned = burned
       const circulating = totalSupply.sub(totalBurned.add(totalLockedAmount))
 
       return {

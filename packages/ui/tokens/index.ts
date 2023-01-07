@@ -16,7 +16,7 @@ export const tokens = {
     dark: darkColors,
   },
   fonts: {
-    normal: "'Kanit', sans-serif",
+    normal: "'Impact', sans-serif",
     mono: 'SFMono, ui-monospace, monospace',
   },
   space: {
@@ -70,5 +70,5 @@ export const tokens = {
   shadows,
 } as const
 
-export type Mode = 'light' | 'dark'
+export type Mode = 'dark'
 export type Tokens = typeof tokens

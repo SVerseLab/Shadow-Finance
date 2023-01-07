@@ -5,7 +5,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import Image from 'next/image'
 import styled, { keyframes } from 'styled-components'
 import bunnyImage from '../../../../public/images/home/lunar-bunny/shadow@2x.png'
-import { SlideSvgDark, SlideSvgLight } from './SlideSvg'
 
 const flyingAnim = () => keyframes`
   from {
@@ -21,21 +20,7 @@ const flyingAnim = () => keyframes`
 
 
 
-const BgWrapper = styled.div`
-  z-index: -1;
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0px;
-  left: 0px;
-`
 
-const InnerWrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  bottom: -3px;
-`
 
 const BunnyWrapper = styled.div`
   width: 100%;
@@ -71,17 +56,11 @@ const Hero = () => {
           }
         `}
       </style>
-      <BgWrapper>
-        <InnerWrapper>
-          <SlideSvgDark className="slide-svg-dark" width="100%" />
-          <SlideSvgLight className="slide-svg-light" width="100%" />
-        </InnerWrapper>
-      </BgWrapper>
       <Flex
         position="relative"
         flexDirection={['column-reverse', null, null, 'row']}
         alignItems={['flex-end', null, null, 'center']}
-        justifyContent="center"
+        justifyContent="cente"
         mt={[account ? '280px' : '50px', null, 0]}
         id="homepage-hero"
       >
@@ -89,7 +68,7 @@ const Hero = () => {
           <Heading scale="xxl" color="secondary" mb="24px">
             {t('#1 Dex on Core Chain From the Shadows.')}
           </Heading>
-          <Heading scale="md" mb="24px">
+          <Heading scale="md" color="Herocolour" mb="24px">
             {t('ShadowSwap is a one-stop decentralized trading protocol which utilizes the security, scalability, and decentralization of the Core blockchain, creating an open and safe marketplace for traders, liquidity providers, and developers.')}
           </Heading>
           <Flex>

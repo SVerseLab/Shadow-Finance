@@ -82,8 +82,8 @@ export const bsc: Chain = {
     etherscan: bscExplorer,
   },
   nativeCurrency: {
-    name: 'Binance Chain Native Token',
-    symbol: 'BNB',
+    name: 'Core Chain Native Token',
+    symbol: 'CORE',
     decimals: 18,
   },
   multicall: {
@@ -98,7 +98,7 @@ export const bscTest: Chain = {
   network: 'bsc-testnet',
   nativeCurrency: {
     decimals: 18,
-    name: 'Binance Chain Native Token',
+    name: 'Core Chain Native Token',
     symbol: 'tBNB',
   },
   rpcUrls: {

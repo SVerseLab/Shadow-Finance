@@ -1,7 +1,6 @@
 import { WalletConfigV2 } from '@pancakeswap/ui-wallets'
 import { WalletFilledIcon } from '@pancakeswap/uikit'
 import type { ExtendEthereum } from 'global'
-import { isFirefox } from 'react-device-detect'
 import { metaMaskConnector, walletConnectNoQrCodeConnector } from '../utils/wagmi'
 
 export enum ConnectorNames {
@@ -44,21 +43,21 @@ const walletsConfig = ({
       qrCode,
       downloadLink: 'https://metamask.app.link/dapp/pancakeswap.finance/',
     },
-    {
-      id: 'binance',
-      title: 'Binance Wallet',
-      icon: '/images/wallets/binance.png',
-      installed: typeof window !== 'undefined' && Boolean(window.BinanceChain),
-      connectorId: ConnectorNames.BSC,
-      guide: {
-        desktop: 'https://www.bnbchain.org/en/binance-wallet',
-      },
-      downloadLink: {
-        desktop: isFirefox
-          ? 'https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search'
-          : 'https://chrome.google.com/webstore/detail/binance-wallet/fhbohimaelbohpjbbldcngcnapndodjp',
-      },
-    },
+    // {
+    //   id: 'binance',
+    //   title: 'Binance Wallet',
+    //   icon: '/images/wallets/binance.png',
+    //   installed: typeof window !== 'undefined' && Boolean(window.BinanceChain),
+    //   connectorId: ConnectorNames.BSC,
+    //   guide: {
+    //     desktop: 'https://www.bnbchain.org/en/binance-wallet',
+    //   },
+    //   downloadLink: {
+    //     desktop: isFirefox
+    //       ? 'https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search'
+    //       : 'https://chrome.google.com/webstore/detail/binance-wallet/fhbohimaelbohpjbbldcngcnapndodjp',
+    //   },
+    // },
     {
       id: 'coinbase',
       title: 'Coinbase Wallet',
@@ -86,14 +85,14 @@ const walletsConfig = ({
       icon: '/images/wallets/walletconnect.png',
       connectorId: ConnectorNames.WalletConnect,
     },
-    {
-      id: 'opera',
-      title: 'Opera Wallet',
-      icon: '/images/wallets/opera.png',
-      connectorId: ConnectorNames.Injected,
-      installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isOpera),
-      downloadLink: 'https://www.opera.com/crypto/next',
-    },
+    // {
+    //   id: 'opera',
+    //   title: 'Opera Wallet',
+    //   icon: '/images/wallets/opera.png',
+    //   connectorId: ConnectorNames.Injected,
+    //   installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isOpera),
+    //   downloadLink: 'https://www.opera.com/crypto/next',
+    // },
     {
       id: 'brave',
       title: 'Brave Wallet',

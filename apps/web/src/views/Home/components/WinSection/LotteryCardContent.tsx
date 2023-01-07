@@ -18,7 +18,7 @@ const LotteryCardContent = () => {
 
         <Text color="white" mb="40px">
           {t(
-            'Shadow Puppets NFTs (SPN) are generated sets of unique, rare, immutable, digital Shadow figures. Which you can control to grow your finances and comes in limited supply, can be staked in SPN mining, or traded/Swapped in the NFT AMM marketplace and more usecases to come. Shadow Puppets will start the NFT Defi Season on Core Network',
+            'Shadow Pandas NFTs (SPN) are generated sets of 3D,unique, rare, immutable, digital Shadow figures. Which can help to grow your Defi finances and comes in limited supply, with series of utilities such as access to private IFO token sales, Staking for persive income and more utilities lurking in the shadows. Shadow Pandas will start the NFT Defi Season on Core Network',
           )}
         </Text>
       </Flex>

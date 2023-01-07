@@ -1,4 +1,4 @@
-import { ModalProvider, light, dark, UIKitProvider } from '@pancakeswap/uikit'
+import { ModalProvider, dark, UIKitProvider } from '@pancakeswap/uikit'
 import { Provider } from 'react-redux'
 import { SWRConfig } from 'swr'
 import { LanguageProvider } from '@pancakeswap/localization'
@@ -12,7 +12,7 @@ import { HistoryManagerProvider } from 'contexts/HistoryContext'
 const StyledUIKitProvider: React.FC<React.PropsWithChildren> = ({ children, ...props }) => {
   const { resolvedTheme } = useNextTheme()
   return (
-    <UIKitProvider theme={resolvedTheme === 'dark' ? dark : light} {...props}>
+    <UIKitProvider theme={resolvedTheme === 'dark' ? dark : dark} {...props}>
       {children}
     </UIKitProvider>
   )

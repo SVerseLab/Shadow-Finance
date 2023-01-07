@@ -1,5 +1,4 @@
 import { vars } from "@pancakeswap/ui/css/vars.css";
-import { useIsMounted } from "@pancakeswap/hooks";
 import React from "react";
 import { Box, Flex } from "../Box";
 import { Link } from "../Link";
@@ -17,14 +16,12 @@ import { Button } from "../Button";
 import CakePrice from "../CakePrice/CakePrice";
 import LangSelector from "../LangSelector/LangSelector";
 import { ArrowForwardIcon, LogoWithTextIcon } from "../Svg";
-import { ThemeSwitcher } from "../ThemeSwitcher";
 import { FooterProps } from "./types";
-import { SkeletonV2 } from "../Skeleton";
+
 
 const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
   items,
   isDark,
-  toggleTheme,
   currentLang,
   langs,
   setLang,
@@ -32,7 +29,6 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
   buyCakeLabel,
   ...props
 }) => {
-  const isMounted = useIsMounted();
   return (
     <StyledFooter
       data-theme="dark"
@@ -43,7 +39,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
     >
       <Flex flexDirection="column" width={["100%", null, "1200px;"]}>
         <StyledIconMobileContainer display={["block", null, "none"]}>
-          <LogoWithTextIcon width="130px" />
+          <LogoWithTextIcon width="130px" isDark={false} />
         </StyledIconMobileContainer>
         <Flex
           order={[2, null, 1]}
@@ -76,7 +72,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
             </StyledList>
           ))}
           <Box display={["none", null, "block"]}>
-            <LogoWithTextIcon width="160px" />
+            <LogoWithTextIcon width="160px" isDark={false} />
           </Box>
         </Flex>
         <StyledSocialLinks order={[2]} pb={["42px", null, "32px"]} mb={["0", null, "32px"]} />
@@ -87,9 +83,6 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
           justifyContent="space-between"
         >
           <Flex order={[2, null, 1]} alignItems="center">
-            <SkeletonV2 variant="round" width="56px" height="32px" isDataReady={isMounted}>
-              <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
-            </SkeletonV2>
             <LangSelector
               currentLang={currentLang}
               langs={langs}
@@ -105,7 +98,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
             <Button
               data-theme={isDark ? "dark" : "light"}
               as="a"
-              href="https://pancakeswap.finance/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82&chainId=56"
+              href="https://shadowswap.xyz/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82&chainId=56"
               target="_blank"
               scale="sm"
               endIcon={<ArrowForwardIcon color="backgroundAlt" />}

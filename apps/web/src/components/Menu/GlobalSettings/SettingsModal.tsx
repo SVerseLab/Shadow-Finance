@@ -6,7 +6,6 @@ import {
   Flex,
   Modal,
   InjectedModalProps,
-  ThemeSwitcher,
   Box,
   QuestionHelper,
   Link,
@@ -23,7 +22,6 @@ import { SUPPORT_ZAP } from 'config/constants/supportChains'
 import { useSwapActionHandlers } from 'state/swap/useSwapActionHandlers'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useTranslation } from '@pancakeswap/localization'
-import useTheme from 'hooks/useTheme'
 import TransactionSettings from './TransactionSettings'
 import ExpertModal from './ExpertModal'
 import GasSettings from './GasSettings'
@@ -73,7 +71,6 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
   const [smartRouterOpen, setSmartRouterOpen] = useUserSmartRouter()
 
   const { t } = useTranslation()
-  const { isDark, setTheme } = useTheme()
 
   if (showConfirmExpertModal) {
     return (
@@ -106,10 +103,6 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
               <Text bold textTransform="uppercase" fontSize="18px" color="secondary" mb="24px">
                 {t('Global')}
               </Text>
-              <Flex justifyContent="space-between" mb="24px">
-                <Text>{t('Dark mode')}</Text>
-                <ThemeSwitcher isDark={isDark} toggleTheme={() => setTheme(isDark ? 'light' : 'dark')} />
-              </Flex>
               {chainId === ChainId.BSC && <GasSettings />}
             </Flex>
           </>
