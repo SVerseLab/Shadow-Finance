@@ -22,7 +22,7 @@ import { CardConfigReturn, EnableStatus } from '../types'
 import IfoCardActions from './IfoCardActions'
 import IfoCardDetails from './IfoCardDetails'
 import IfoCardTokens from './IfoCardTokens'
-import IfoVestingCard from './IfoVestingCard'
+
 
 const StyledCard = styled(Card)`
   width: 100%;
@@ -176,7 +176,6 @@ const SmallCard: React.FC<React.PropsWithChildren<IfoCardProps>> = ({
         <CardBody p="12px">
           {isVesting ? (
             <>
-              <IfoVestingCard ifo={ifo} poolId={poolId} publicIfoData={publicIfoData} walletIfoData={walletIfoData} />
               <StyledCardFooter>
                 <ExpandableLabel expanded={isExpanded} onClick={() => setIsExpanded((prev) => !prev)}>
                   {isExpanded ? t('Hide') : t('Details')}
