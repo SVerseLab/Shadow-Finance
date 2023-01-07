@@ -10,6 +10,7 @@ import { Breakpoints, MediaQueries, ZIndices } from "./types";
 
 export interface PancakeTheme {
   siteWidth: number;
+  isDark: boolean;
   alert: AlertTheme;
   colors: typeof vars.colors;
   card: CardTheme;
