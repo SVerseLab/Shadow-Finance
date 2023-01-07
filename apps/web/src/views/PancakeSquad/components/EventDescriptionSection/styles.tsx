@@ -1,4 +1,4 @@
-import { Flex, lightColors } from '@pancakeswap/uikit'
+import { Flex, darkColors, } from '@pancakeswap/uikit'
 import styled, { keyframes } from 'styled-components'
 
 const flyingAnim = () => keyframes`
@@ -18,7 +18,7 @@ export const StyledEventDescriptionSectionContainer = styled(Flex)`
 `
 
 export const StyledBodyTextList = styled('ul')`
-  color: ${lightColors.textSubtle};
+  color: ${darkColors.textSubtle};
   margin-bottom: 24px;
 `
 
