@@ -1,4 +1,4 @@
-import { rinkeby, goerli } from 'wagmi/chains'
+import { rinkeby, mainnet, goerli } from 'wagmi/chains'
 import { Chain } from 'wagmi'
 
 export const avalandche: Chain = {
@@ -115,4 +115,4 @@ export const bscTest: Chain = {
   testnet: true,
 }
 
-export { rinkeby,  goerli }
+export { rinkeby, mainnet,  goerli }
