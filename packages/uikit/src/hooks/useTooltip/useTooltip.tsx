@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { usePopper } from "react-popper";
 import { DefaultTheme, ThemeProvider, useTheme } from "styled-components";
-import { dark, light } from "../../theme";
+import { dark} from "../../theme";
 import getPortalRoot from "../../util/getPortalRoot";
 import isTouchDevice from "../../util/isTouchDevice";
 import { Arrow, StyledTooltip } from "./StyledTooltip";
@@ -23,7 +23,7 @@ const animationMap = {
 
 const invertTheme = (currentTheme: DefaultTheme) => {
   if (currentTheme.isDark) {
-    return light;
+    return dark;
   }
   return dark;
 };
