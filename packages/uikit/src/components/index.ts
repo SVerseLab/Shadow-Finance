@@ -18,7 +18,6 @@ export * from "./Link";
 export * from "./Message";
 export * from "./NotificationDot";
 export * from "./Overlay";
-export * from "./PancakeToggle";
 export * from "./Progress";
 export * from "./Radio";
 export * from "./Slider";
