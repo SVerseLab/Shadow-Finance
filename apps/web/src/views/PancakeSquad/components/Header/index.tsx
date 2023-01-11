@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Box, Flex, lightColors, Spinner, Text, Timeline } from '@pancakeswap/uikit'
+import { Box, Flex, darkColors, Spinner, Text, Timeline } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useGetCakeBalance } from 'hooks/useTokenBalance'
 import useTheme from 'hooks/useTheme'
@@ -66,27 +66,27 @@ const PancakeSquadHeader: React.FC<React.PropsWithChildren<PancakeSquadHeaderTyp
           <Text as="a" color="primary" bold>{`< ${t('NFT Marketplace')}`}</Text>
         </Link>
       </Flex>
-      <StyledSquadTitle my="32px" color={lightColors.invertedContrast} bold textAlign="center">
+      <StyledSquadTitle my="32px" color={darkColors.invertedContrast} bold textAlign="center">
         {t('Pancake Squad')}
       </StyledSquadTitle>
-      <Text color={lightColors.warning} textAlign="center" bold>
+      <Text color={darkColors.warning} textAlign="center" bold>
         {`${t('Presale:')} 04:00 UTC, Oct. 7`}
       </Text>
-      <Text color={lightColors.warning} textAlign="center" bold>
+      <Text color={darkColors.warning} textAlign="center" bold>
         {`${t('Public Sale:')} 08:00 UTC, Oct. 7`}
       </Text>
-      <Text color={lightColors.warning} textAlign="center" bold>
+      <Text color={darkColors.warning} textAlign="center" bold>
         {t('Mint Cost: %minCost% CAKE each', {
           minCost: DEFAULT_CAKE_COST,
         })}
       </Text>
-      <Text color={lightColors.warning} textAlign="center" bold>
+      <Text color={darkColors.warning} textAlign="center" bold>
         {t('Max per wallet: %maxPerWallet%', { maxPerWallet: DEFAULT_MAX_TICKETS })}
       </Text>
-      <Text color={lightColors.invertedContrast} textAlign="center">
+      <Text color={darkColors.invertedContrast} textAlign="center">
         {t('PancakeSwap’s first official generative NFT collection.')}
       </Text>
-      <Text color={lightColors.invertedContrast} mb={!displayEventBlock ? '80px' : '32px'} textAlign="center">
+      <Text color={darkColors.invertedContrast} mb={!displayEventBlock ? '80px' : '32px'} textAlign="center">
         {t('Join the squad.')}
       </Text>
       {displayEventBlock && (

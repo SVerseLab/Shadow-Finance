@@ -1,4 +1,4 @@
-import { Box, lightColors, Progress, Text } from '@pancakeswap/uikit'
+import { Box, darkColors, Progress, Text } from '@pancakeswap/uikit'
 import { ContextApi } from '@pancakeswap/localization'
 import { SaleStatusEnum, UserStatusEnum } from '../../types'
 
@@ -50,11 +50,11 @@ const SaleProgress: React.FC<React.PropsWithChildren<PreEventProps>> = ({
   return displaySaleProgress ? (
     <Box mb="24px">
       {isMintCompleted && (
-        <Text color={lightColors.warning} mb="40px" bold>
+        <Text color={darkColors.warning} mb="40px" bold>
           {t('Claiming Complete!')}
         </Text>
       )}
-      <Text color={lightColors.invertedContrast} mb="24px" bold>
+      <Text color={darkColors.invertedContrast} mb="24px" bold>
         {isMintCompleted
           ? t('All 10,000 Pancake Squad NFTs have now been minted!')
           : saleProgressTextMapping(t, saleStatus, remainingTickets.toString(), maxSupply.toString())}

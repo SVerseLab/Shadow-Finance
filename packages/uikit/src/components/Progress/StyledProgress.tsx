@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { space, variant as StyledSystemVariant } from "styled-system";
-import { lightColors } from "../../theme";
+import { darkColors } from "../../theme";
 import { styleVariants, styleScales } from "./themes";
 import { ProgressProps, variants } from "./types";
 
@@ -17,7 +17,7 @@ export const Bar = styled.div<ProgressBarProps>`
   background: ${({ theme, $useDark, primary, $background }) => {
     if ($background) return $background;
     if ($useDark) return primary ? theme.colors.secondary : `${theme.colors.secondary80}`;
-    return primary ? lightColors.secondary : `${lightColors.secondary80}`;
+    return primary ? darkColors.secondary : `${darkColors.secondary80}`;
   }};
   height: 100%;
   transition: width 200ms ease;
@@ -35,7 +35,7 @@ interface StyledProgressProps {
 
 const StyledProgress = styled.div<StyledProgressProps>`
   position: relative;
-  background-color: ${({ theme, $useDark }) => ($useDark ? theme.colors.input : lightColors.input)};
+  background-color: ${({ theme, $useDark }) => ($useDark ? theme.colors.input : darkColors.input)};
   box-shadow: ${({ theme }) => theme.shadows.inset};
   overflow: hidden;
 
